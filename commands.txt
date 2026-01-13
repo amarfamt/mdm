@@ -1,0 +1,31 @@
+ Tested ok
+ amarrajendrapalwankar@fedora:/Exp01$ mkdir test
+amarrajendrapalwankar@fedora:/Exp01$ cd test
+amarrajendrapalwankar@fedora:/Exp01/test$ vi test.txt
+amarrajendrapalwankar@fedora:/Exp01/test$ ls
+test.txt
+amarrajendrapalwankar@fedora:/Exp01/test$ git init
+amarrajendrapalwankar@fedora:/Exp01/test$ git add test.txt 
+amarrajendrapalwankar@fedora:/Exp01/test$ git commit -m "ok"amarrajendrapalwankar@fedora:/Exp01/test$ git branch
+* master
+amarrajendrapalwankar@fedora:/Exp01/test$ git config --list
+user.email=amar.palwankar@famt.ac.in
+user.name=Amar
+
+
+if not set above then 
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+git remote add origin https://github.com/amarfamt/mdm1.git (Need to be created first)
+git branch
+ o/p: * master
+git push origin master
+
+   enter username :amarfamt and PAT(Token use classic token and select repo option)
+  
+ Now to pull repo in same local directory
+   git pull origin master
+      If contents are same then Already up to date.
+  Make some changes in test.txt on repo and commit & then 
+  git pull origin master
+  Now display conttent of test.txt from local using cat cmd
