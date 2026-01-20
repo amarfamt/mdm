@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Custom CSS - Easy to understand */
+        
+        /* Navigation styling */
+        .navbar {
+            background-color: #2c3e50;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 24px;
+        }
+        
+        .nav-link {
+            font-size: 18px;
+            margin: 0 10px;
+        }
+        
+        /* Section styling */
+        section {
+            padding: 60px 0;
+            min-height: 400px;
+        }
+        
+        /* Different background colors for each section */
+        #home {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        #about {
+            background-color: #ecf0f1;
+        }
+        
+        #education {
+            background-color: #ffffff;
+        }
+        
+        #skills {
+            background-color: #e8f5e9;
+        }
+        
+        #experience {
+            background-color: #fff3e0;
+        }
+        
+        #projects {
+            background-color: #e3f2fd;
+        }
+        
+        #contact {
+            background-color: #f3e5f5;
+        }
+        
+        /* Section titles */
+        .section-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        #home .section-title {
+            color: white;
+        }
+        
+        /* Profile photo */
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+        }
+        
+        /* Card styling */
+        .info-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        
+        /* Skill bars */
+        .skill-item {
+            margin-bottom: 20px;
+        }
+        
+        .skill-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .skill-bar {
+            background-color: #e0e0e0;
+            height: 25px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            line-height: 25px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* Timeline for education/experience */
+        .timeline-item {
+            padding-left: 30px;
+            border-left: 3px solid #667eea;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: #667eea;
+            border-radius: 50%;
+            position: absolute;
+            left: -9px;
+            top: 0;
+        }
+        
+        .timeline-year {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .timeline-title {
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 5px;
+        }
+        
+        .timeline-org {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        /* Project cards */
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        /* Contact info */
+        .contact-item {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item i {
+            width: 30px;
+            color: #667eea;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <!-- Brand/Logo -->
+            <a class="navbar-brand" href="#home">My Resume</a>
+            
+            <!-- Mobile menu button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HOME -->
+    <section id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left side: Photo -->
+                <div class="col-lg-4 text-center mb-4">
+                    <img src="https://via.placeholder.com/200" alt="Profile Photo" class="profile-photo">
+                </div>
+                
+                <!-- Right side: Introduction -->
+                <div class="col-lg-8">
+                    <h1 class="section-title">Amar Palwankar</h1>
+                    <h3 class="text-center mb-4">Web Developer & Designer</h3>
+                    <p class="lead text-center">
+                        Welcome to my online resume! I am a passionate web developer with 3 years of experience 
+                        in creating beautiful and functional websites. I love coding, design, and solving problems.
+                    </p>
+                    <div class="text-center mt-4">
+                        <a href="#contact" class="btn btn-light btn-lg">Contact Me</a>
+                        <a href="#projects" class="btn btn-outline-light btn-lg ms-2">View Projects</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            
+            <div class="row">
+                <!-- Personal Info -->
+                <div class="col-md-6 mb-4">
+                    <div class="info-card">
+                        <h4>Personal Information</h4>
+                        <hr>
+                        <p><strong>Full Name:</strong> Amar Rajendra Palwankar</p>
+                        <p><strong>Age:</strong> 44 years</p>
+                        <p><strong>Location:</strong> Ratnagiri,India</p>
+                        <p><strong>Languages:</strong> Marathi ,English ,Hindi</p>
+                        <p><strong>Hobbies:</strong> Coding, Reading</p>
+                    </div>
+                </div>
+                
+                <!-- Professional Summary -->
+                <div class="col-md-6 mb-4">
+                    <div class="info-card">
+                        <h4>Professional Summary</h4>
+                        <hr>
+                        <p>
+                            I am a dedicated web developer with a strong foundation in HTML, CSS, JavaScript, 
+                            and modern frameworks like Bootstrap and React. I have successfully completed 
+                            numerous projects ranging from personal portfolios to e-commerce websites.
+                        </p>
+                        <p>
+                            My goal is to create user-friendly, responsive, and visually appealing websites 
+                            that provide excellent user experience. I am always eager to learn new technologies 
+                            and improve my skills.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: EDUCATION -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    
+                    <!-- Education Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-year">2018 - 2022</div>
+                        <div class="timeline-title">Bachelor of Engineering in Computer Science Engineering</div>
+                        <div class="timeline-org">State University of Maharashtra</div>
+                        <p class="mt-2">
+                            Graduated with honors. Specialized in Web Development and Software Engineering. 
+                            GPA: 3.8/4.0
+                        </p>
+                    </div>
+                    
+                    <!-- Education Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-year">2016 - 2018</div>
+                        <div class="timeline-title">High School Diploma</div>
+                        <div class="timeline-org">Central High School, Pune</div>
+                        <p class="mt-2">
+                            Completed with distinction. Active member of the Computer Science Club and 
+                            participated in various coding competitions.
+                        </p>
+                    </div>
+                    
+                    <!-- Education Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-title">Web Development Bootcamp</div>
+                        <div class="timeline-org">Code Academy Online</div>
+                        <p class="mt-2">
+                            Intensive 6-month program covering HTML, CSS, JavaScript, React, Node.js, 
+                            and MongoDB. Built 10+ full-stack projects.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: SKILLS -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="row">
+                <!-- Left Column: Frontend Skills -->
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <h4 class="mb-4">Frontend Development</h4>
+                        
+                        <!-- HTML Skill -->
+                        <div class="skill-item">
+                            <div class="skill-name">HTML5</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%;">90%</div>
+                            </div>
+                        </div>
+                        
+                        <!-- CSS Skill -->
+                        <div class="skill-item">
+                            <div class="skill-name">CSS3 & Bootstrap</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%;">85%</div>
+                            </div>
+                        </div>
+                        
+                        <!-- JavaScript Skill -->
+                        <div class="skill-item">
+                            <div class="skill-name">JavaScript</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%;">80%</div>
+                            </div>
+                        </div>
+                        
+                        <!-- React Skill -->
+                        <div class="skill-item">
+                            <div class="skill-name">React.js</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 75%;">75%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Backend & Other Skills -->
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <h4 class="mb-4">Backend & Other Skills</h4>
+                        
+                        <!-- Node.js Skill -->
+                        <div class="skill-item">
+                            <div class="skill-name">Node.js</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 70%;">70%</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Python Skill -->
+                        <div class="skill-item">
+                            <div class="skill-name">Python</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 75%;">75%</div>
+                            </div>
+                        </div>
+                        
+                        <!-- SQL Skill -->
+                        <div class="skill-item">
+                            <div class="skill-name">SQL & Databases</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 65%;">65%</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Git Skill -->
+                        <div class="skill-item">
+                            <div class="skill-name">Git & GitHub</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%;">80%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: EXPERIENCE -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    
+                    <!-- Experience Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-year">2022 - Present</div>
+                        <div class="timeline-title">Junior Web Developer</div>
+                        <div class="timeline-org">Tech Solutions Inc., INDIA</div>
+                        <p class="mt-2">
+                            <strong>Responsibilities:</strong>
+                        </p>
+                        <ul>
+                            <li>Develop and maintain responsive websites using HTML, CSS, and JavaScript</li>
+                            <li>Collaborate with design team to implement UI/UX improvements</li>
+                            <li>Debug and fix website issues reported by clients</li>
+                            <li>Optimize website performance and loading speed</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Experience Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021 - 2022</div>
+                        <div class="timeline-title">Web Development Intern</div>
+                        <div class="timeline-org">Creative Digital Agency, India</div>
+                        <p class="mt-2">
+                            <strong>Responsibilities:</strong>
+                        </p>
+                        <ul>
+                            <li>Assisted senior developers in building client websites</li>
+                            <li>Created responsive landing pages using Bootstrap</li>
+                            <li>Tested websites across different browsers and devices</li>
+                            <li>Learned version control using Git and GitHub</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Experience Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-year">2020 - 2021</div>
+                        <div class="timeline-title">Freelance Web Developer</div>
+                        <div class="timeline-org">Self-Employed</div>
+                        <p class="mt-2">
+                            <strong>Responsibilities:</strong>
+                        </p>
+                        <ul>
+                            <li>Built custom websites for small businesses and individuals</li>
+                            <li>Provided website maintenance and support services</li>
+                            <li>Managed client relationships and project timelines</li>
+                            <li>Completed 15+ successful projects</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: PROJECTS -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            
+            <div class="row">
+                
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <h4>E-Commerce Website</h4>
+                        <p class="text-muted">HTML, CSS, JavaScript, Bootstrap</p>
+                        <p>
+                            A fully responsive online shopping website with product catalog, 
+                            shopping cart, and checkout functionality.
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-1">HTML</span>
+                            <span class="badge bg-success me-1">CSS</span>
+                            <span class="badge bg-warning">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <h4>Weather App</h4>
+                        <p class="text-muted">React.js, API Integration</p>
+                        <p>
+                            A weather application that displays current weather and 7-day forecast 
+                            for any city using weather API.
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-1">React</span>
+                            <span class="badge bg-success me-1">API</span>
+                            <span class="badge bg-info">CSS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <h4>Task Manager App</h4>
+                        <p class="text-muted">JavaScript, LocalStorage</p>
+                        <p>
+                            A to-do list application with add, edit, delete, and complete 
+                            functionality. Data stored in browser's local storage.
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge bg-warning me-1">JavaScript</span>
+                            <span class="badge bg-primary me-1">HTML</span>
+                            <span class="badge bg-success">CSS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <h4>Portfolio Website</h4>
+                        <p class="text-muted">HTML, CSS, Bootstrap</p>
+                        <p>
+                            A personal portfolio website showcasing projects, skills, and contact 
+                            information with smooth scrolling and animations.
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-1">HTML</span>
+                            <span class="badge bg-success me-1">CSS</span>
+                            <span class="badge bg-warning">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <h4>Restaurant Website</h4>
+                        <p class="text-muted">HTML, CSS, JavaScript</p>
+                        <p>
+                            A multi-page restaurant website with menu display, online reservation 
+                            system, and contact form.
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-1">HTML</span>
+                            <span class="badge bg-success me-1">CSS</span>
+                            <span class="badge bg-warning">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <h4>Blog Platform</h4>
+                        <p class="text-muted">Node.js, Express, MongoDB</p>
+                        <p>
+                            A full-stack blogging platform where users can create, edit, and delete 
+                            blog posts with authentication system.
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge bg-success me-1">Node.js</span>
+                            <span class="badge bg-primary me-1">MongoDB</span>
+                            <span class="badge bg-info">Express</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            
+            <div class="row">
+                <!-- Contact Information -->
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <h4 class="mb-4">Get In Touch</h4>
+                        
+                        <div class="contact-item">
+                            <strong>Email:</strong> amar.palwankar@famt.ac.in
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>Phone:</strong> +97 9767023553
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>Location:</strong> Ratnagiri,Maharashtra,India.
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>LinkedIn:</strong> linkedin.com/in/amarp
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>GitHub:</strong> github.com/amarfamt
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>Website:</strong> https://www.amarpalwankar.wordpress.com
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <h4 class="mb-4">Send Message</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="4" placeholder="Write your message"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Amar Palwankar. All Rights Reserved.</p>
+            <p class="mb-0">Built with HTML5, CSS3, and Bootstrap</p>
+        </div>
+    </footer>
+
+  
+
+</body>
+</html>
