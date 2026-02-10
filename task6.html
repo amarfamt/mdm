@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Task List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        input {
+            width: 70%;
+            padding: 8px;
+            font-size: 16px;
+        }
+            button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+          ul {
+            list-style: none;
+            padding: 0;
+        }
+              li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+        }
+             .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+    
+      
+  
+   
+    </style>
+</head>
+<body>
+    <h1>Task List</h1>
+    
+    <input type="text" id="taskInput" placeholder="Enter a task...">
+    <button onclick="addTask()">Add</button>
+    
+    <ul id="taskList"></ul>
+
+    <script>
+        let tasks = [];
+        
+        function addTask() {
+            let input = document.getElementById('taskInput');
+            let text = input.value.trim();
+            
+            if (text === '') {
+                alert('Please enter a task');
+                return;
+            }
+            
+            tasks.push({
+                id: Date.now(),
+                text: text,
+                completed: false
+            });
+            
+            input.value = '';
+            showTasks();
+        }
+        
+        function toggleTask(id) {
+            for (let i = 0; i < tasks.length; i++) {
+                if (tasks[i].id === id) {
+                    tasks[i].completed = !tasks[i].completed;
+                    break;
+                }
+            }
+            showTasks();
+        }
+        
+        function showTasks() {
+            let list = document.getElementById('taskList');
+            list.innerHTML = '';
+            
+            for (let i = 0; i < tasks.length; i++) {
+                let task = tasks[i];
+                
+                let li = document.createElement('li');
+                
+                let span = document.createElement('span');
+                span.textContent = task.text;
+                if (task.completed) {
+                    span.className = 'completed';
+                }
+                span.onclick = function() { toggleTask(task.id); };
+                
+                let button = document.createElement('button');
+                button.textContent = task.completed ? 'Undo' : 'Done';
+                button.onclick = function() { toggleTask(task.id); };
+                
+                li.appendChild(span);
+                li.appendChild(button);
+                list.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>
