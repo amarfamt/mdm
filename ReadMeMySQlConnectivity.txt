@@ -17,11 +17,14 @@ db/
 
 Table: students
 ---------------
-id (INT, AUTO_INCREMENT, PRIMARY KEY)
-name (VARCHAR(100), NOT NULL)
-branch (VARCHAR(100), NOT NULL)
-age (INT, NOT NULL)
-created_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP)
+CREATE TABLE Students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    branch VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 
 
 db_config.php
