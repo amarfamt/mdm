@@ -13,6 +13,17 @@ db/
 ├── edit.php              (Edit student form)
 ├── update_process.php    (Update student)
 └── delete_process.php    (Delete student)
+
+
+Table: students
+---------------
+id (INT, AUTO_INCREMENT, PRIMARY KEY)
+name (VARCHAR(100), NOT NULL)
+branch (VARCHAR(100), NOT NULL)
+age (INT, NOT NULL)
+created_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP)
+
+
 db_config.php
 ##############
 <?php
