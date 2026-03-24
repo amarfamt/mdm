@@ -33,7 +33,7 @@ db_config.php
 
 $host = 'localhost';
 $username = 'root';
-$password = '';  // Default XAMPP password is empty
+$password = 'student';  
 $database = 'student_db';
 // Create connection
 $conn = mysqli_connect($host, $username, $password, $database);
