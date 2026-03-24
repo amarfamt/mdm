@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+</head>
+<body>
+    <h2>Student Registration Form</h2>
+    <form action="http://127.0.0.1/db/process.php" method="POST">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" 
+required></td>
+            </tr>
+            <tr>
+                <td>Branch:</td>
+                <td>
+                    <select name="branch" required>
+                        <option value="">Select Branch</option>
+                        <option value="Computer 
+Engineering">Computer Engineering</option>
+                        <option value="Information 
+Technology">Information Technology</option>
+                        <option value="Mechanical 
+Engineering">Mechanical Engineering</option>
+                        <option value="Civil Engineering">Civil 
+Engineering</option>
+                        <option value="Electronics 
+Engineering">Electronics Engineering</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="number" name="age" min="17" 
+max="45" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="save" 
+value="SAVE">
+<td> <input type="reset" value="Clear">
+ </td>
+            </tr>
+        </table>
+    </form>
+    <br>
+                    
+                </td>
+    <a href="view.php">View All Students</a> | 
+    <a href="delete.html">Delete Student</a>
+</body>
+</html>
